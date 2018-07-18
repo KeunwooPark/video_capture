@@ -4,21 +4,26 @@ It uses OpenCV.
 
 ## How to use
 1. Do not record, but show live images
-<pre><code>$ python record.py
-</code></pre>
+```console
+$ python record.py
+```
 
-1. Open camera setting panel.
-<pre><code>$ python record.py --setting
-</code></pre>
+2. Open camera setting panel.
+```console
+$ python record.py --setting
+```
 
-1. Save images to directory. All the streaming images will be saved automatically
-<pre><code>$ python record.py --save dir/to/save --mode a
-</code></pre>
+3. Save images to directory. All the streaming images will be saved automatically
+```console
+$ python record.py --save dir/to/save --mode a
+```
 
-1. Save images to directory. All the streaming images will be saved manually. If you press 'space' button, it will save an image.
-<pre><code>$ python record.py --save dir/to/save --mode m
-</code></pre>
+4. Save images to directory. All the streaming images will be saved manually. If you press 'space' button, it will save an image.
+```console
+$ python record.py --save dir/to/save --mode m
+```
 
 ## Help
-<pre><code>$ python record.py --help
-</code></pre>
+```console
+$ python record.py --help
+```
