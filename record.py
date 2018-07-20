@@ -6,6 +6,7 @@ parser = argparse.ArgumentParser(description='Simple video capture script.')
 parser.add_argument('--save', nargs = '?', help='Directory path to save image. If not save mode, it is ignored.')
 parser.add_argument('--setting', action='store_true', help='Open camera setting pannel. Other flags are all ignored.')
 parser.add_argument('--mode', choices=['a', 'm'], default='m', help='capture mode. "a" for automatic capturing, "m" for manual capturing')
+parser.add_argument('--period', type = int, default=1, help='capture frame period')
 
 args = parser.parse_args()
 #print(parser)
@@ -40,5 +41,7 @@ while True:
         continue
 
     if is_auto or (input_key == ord(' ')):
-        cv2.imwrite(img_file_name, frame)
-        frame_id += 1
+        if frame_id % args.period == 0:
+            cv2.imwrite(img_file_name, frame)
+
+    frame_id += 1
